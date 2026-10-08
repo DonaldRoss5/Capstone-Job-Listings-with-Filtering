@@ -1,0 +1,44 @@
+@use "./variables" as *;
+
+.loading-state,
+.empty-state,
+.error-state {
+  padding: 2rem 1rem;
+  border-radius: $radius;
+  background: $color-surface;
+  box-shadow: $shadow-card;
+  text-align: center;
+}
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.empty-state {
+  p {
+    margin: 0.5rem 0 0;
+  }
+}
+
+.error-text {
+  margin: 0 0 1rem;
+  color: $color-danger;
+  font-weight: 700;
+}
+
+.error-state__retry {
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  border-radius: $radius;
+  background: $color-primary-dark;
+  color: $color-surface;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-primary;
+  }
+}

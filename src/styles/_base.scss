@@ -1,0 +1,18 @@
+@use "./variables" as *;
+
+body {
+  margin: 0;
+  background: $color-bg;
+  color: $color-text;
+  font-family: "League Spartan", "Segoe UI", system-ui, sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  color: $color-primary;
+}
+
+:focus-visible {
+  outline: 3px solid $color-primary-dark;
+  outline-offset: 2px;
+}

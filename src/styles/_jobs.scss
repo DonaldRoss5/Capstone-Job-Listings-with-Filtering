@@ -1,0 +1,144 @@
+@use "./variables" as *;
+
+.job-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+  list-style: none;
+
+  &__item {
+    margin: 0;
+  }
+}
+
+.job-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-left: 5px solid transparent;
+  border-radius: $radius;
+  background: $color-surface;
+  box-shadow: $shadow-card;
+  gap: 1rem;
+
+  &--featured {
+    border-left-color: $color-primary;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__company {
+    color: $color-primary;
+    font-weight: 700;
+  }
+
+  &__badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: $radius-pill;
+    color: $color-surface;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &--new {
+      background: $color-primary;
+    }
+
+    &--featured {
+      background: $color-primary-dark;
+    }
+  }
+
+  &__position {
+    margin: 0;
+    color: $color-heading;
+    font-size: 1.125rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 0.25rem 1rem;
+    list-style: none;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+
+    &__body {
+      flex: 1;
+    }
+  }
+}
+
+.company-logo {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+
+  &--placeholder {
+    display: inline-flex;
+    background: $color-primary-dark;
+    color: $color-surface;
+    font-size: 1.5rem;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: 88px;
+    height: 88px;
+    margin-right: 1.5rem;
+  }
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 0.75rem;
+  list-style: none;
+
+  &__tag {
+    display: inline-block;
+    padding: 0.4rem 0.6rem;
+    border: 0;
+    border-radius: $radius;
+    background: $color-tag-bg;
+    color: $color-primary;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    &--button {
+      cursor: pointer;
+
+      &:hover {
+        background: $color-primary;
+        color: $color-surface;
+      }
+    }
+  }
+}
