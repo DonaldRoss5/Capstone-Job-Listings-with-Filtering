@@ -1,0 +1,112 @@
+@use "./variables" as *;
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-header {
+  background: $color-primary;
+  border-bottom: 6px solid $color-primary-dark;
+
+  &__inner {
+    display: flex;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__brand {
+    color: $color-surface;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__link {
+    padding: 0.4rem 0.75rem;
+    border-radius: $radius;
+    color: $color-surface;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      background: rgb(255, 255, 255, 0.2);
+    }
+
+    &:focus-visible {
+      outline-color: $color-surface;
+    }
+
+    &--cta {
+      background: $color-primary-dark;
+
+      &:hover {
+        background: $color-primary-darker;
+      }
+    }
+  }
+}
+
+.app-main {
+  width: 100%;
+  max-width: $container-width;
+  flex: 1;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.app-footer {
+  padding: 1.5rem 1rem;
+  color: $color-text;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.page {
+  &__header {
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    margin: 0 0 0.5rem;
+    color: $color-heading;
+    font-size: 1.75rem;
+  }
+
+  &__description {
+    margin: 0;
+  }
+}
+
+.not-found-page {
+  padding: 3rem 0;
+  text-align: center;
+
+  &__title {
+    color: $color-heading;
+  }
+
+  &__description {
+    margin-bottom: 1.5rem;
+  }
+
+  &__action {
+    font-weight: 700;
+  }
+}
