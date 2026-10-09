@@ -36,7 +36,20 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
 
+    &__user {
+    display: none;
+    color: $color-surface;
+    font-size: 0.875rem;
+
+    @media (min-width: $breakpoint-md) {
+      display: inline;
+    }
+  }
+  
   &__link {
     padding: 0.4rem 0.75rem;
     border-radius: $radius;
