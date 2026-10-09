@@ -6,6 +6,7 @@ function JobList({
   error,
   onRetry,
   onTagSelect,
+  renderActions,
   emptyTitle = "No job listings yet",
   emptyMessage = "Check back soon for new roles.",
 }) {
@@ -50,7 +51,11 @@ function JobList({
     <ul className="job-list">
       {jobs.map((job) => (
         <li className="job-list__item" key={job.id}>
-          <JobCard job={job} onTagSelect={onTagSelect} />
+          <JobCard
+            job={job}
+            onTagSelect={onTagSelect}
+            actions={renderActions ? renderActions(job) : null}
+          />
         </li>
       ))}
     </ul>

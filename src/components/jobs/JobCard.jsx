@@ -3,7 +3,7 @@ import { getJobTags } from "../../lib/jobTags.js";
 import CompanyLogo from "./CompanyLogo.jsx";
 import TagList from "./TagList.jsx";
 
-function JobCard({ job, onTagSelect }) {
+function JobCard({ job, onTagSelect, actions }) {
   const cardClass = job.is_featured
     ? "job-card job-card--featured"
     : "job-card";
@@ -36,6 +36,7 @@ function JobCard({ job, onTagSelect }) {
           <li>{job.contract}</li>
           <li>{job.location}</li>
         </ul>
+        {actions}
       </div>
 
       <TagList tags={getJobTags(job)} onSelect={onTagSelect} />
