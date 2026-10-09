@@ -19,6 +19,9 @@ export default function AppLayout() {
 
             {!loading && user && (
               <>
+                <NavLink className="main-nav__link" to="/jobs/new">
+                  Post a job
+                </NavLink>
                 <span className="main-nav__user">{user.email}</span>
                 <button
                   type="button"
