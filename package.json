@@ -15,7 +15,8 @@
     "lint:js:fix": "eslint . --fix",
     "lint:styles:fix": "stylelint \"src/**/*.scss\" --fix",
     "lint:fix": "npm run lint:js:fix && npm run lint:styles:fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify:rls": "node --env-file=.env.local scripts/verify-rls.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
