@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "vitest",
+    "test:run": "vitest run",
     "lint:js": "eslint .",
     "lint:styles": "stylelint \"src/**/*.{scss,css}\"",
     "lint:html": "htmlhint index.html",
@@ -13,7 +15,8 @@
     "lint:js:fix": "eslint . --fix",
     "lint:styles:fix": "stylelint \"src/**/*.scss\" --fix",
     "lint:fix": "npm run lint:js:fix && npm run lint:styles:fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify:rls": "node --env-file=.env.local scripts/verify-rls.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
@@ -24,6 +27,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
@@ -32,11 +38,13 @@
     "eslint-plugin-react-refresh": "^0.5.6",
     "globals": "^17.12.0",
     "htmlhint": "^1.9.2",
+    "jsdom": "^29.1.1",
     "sass": "^1.105.1",
     "stylelint": "^17.16.0",
     "stylelint-config-recommended-scss": "^17.0.1",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-scss": "^7.3.0",
-    "vite": "^8.3.0"
+    "vite": "^8.3.0",
+    "vitest": "^4.1.11"
   }
 }
